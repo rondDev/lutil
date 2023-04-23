@@ -1,4 +1,4 @@
-use clap::{Parser, Args, Subcommand};
+use clap::{Args, Parser, Subcommand};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -9,32 +9,18 @@ struct Cli {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
-    ExtendedRegexp {
-        pattern: String,
-    },
-    FixedStrings {
-        string: String,
-    },
-    BasicRegexp {
-        pattern: String,
-    },
-    PerlRegexp {
-        pattern: String,
-    },
-    RegExp {
-        pattern: String,
-    },
-    File {
-        path: String,
-    },
-    IgnoreCase {
-        boolean: bool,
-    },
+    ExtendedRegexp { pattern: String },
+    FixedStrings { string: String },
+    BasicRegexp { pattern: String },
+    PerlRegexp { pattern: String },
+    RegExp { pattern: String },
+    File { path: String },
+    IgnoreCase { boolean: bool },
 }
 
 fn main() {
     let args = Cli::parse();
-    
+
     match args.command {
         Commands::ExtendedRegexp { pattern } => todo!(),
         Commands::FixedStrings { string } => todo!(),
@@ -43,6 +29,5 @@ fn main() {
         Commands::RegExp { pattern } => todo!(),
         Commands::File { path } => todo!(),
         Commands::IgnoreCase { boolean } => todo!(),
-
     }
 }
